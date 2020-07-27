@@ -29,7 +29,7 @@ In your terminal emulator, submit the job by typing
 
 `sbatch lmp_edge.batch`
 
-then hit Return. Then following [these procedures](https://github.com/shuozhixu/LAMMPSatUCSB#another-example-calculating-the-peierls-stress-in-a-bcc-metal) to obtain the LSR value. Write it down.
+then hit Return. Then following [these procedures](https://github.com/shuozhixu/LAMMPSatUCSB/#LSR) to obtain the LSR value. Write it down.
 
 
 ### More {110} edge LSR values in CrMoNbTa
