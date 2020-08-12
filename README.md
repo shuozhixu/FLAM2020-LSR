@@ -1,6 +1,6 @@
 # Local slip resistance
 
-Here, we calculate the local slip resistance (LSR) of edge and screw dislocations on {110}, {112}, and {123} planes in CrMoNbTa, CrNbTaW, and MoNbTaW. LSR is just a name for the Peierls stress in HEAs. Since there are two types of dislocations, three types of planes, and three HEAs, you need to prepare 18 directories on your local computer and on Pod, respectively.
+Here, we calculate the local slip resistance (LSR) of edge and screw dislocations on {110}, {112}, and {123} planes in CrMoNbTa, CrNbTaW, MoNbTaV, and MoNbTaW. LSR is just a name for the Peierls stress in HEAs. Since there are two types of dislocations, three types of planes, and four HEAs, you need to prepare 24 directories on your local computer and on Pod, respectively.
 
 ## {110} LSR of the edge dislocation in CrMoNbTa
 
@@ -57,10 +57,14 @@ Repeat the steps above to get 20 {112} edge LSR, 20 {112} screw LSR, 20 {123} ed
 
 Repeat the steps above to get 20 {110} edge LSR, 20 {110} screw LSR, 20 {112} edge LSR, 20 {112} screw LSR, 20 {123} edge LSR, and 20 {123} screw LSR in CrNbTaW. Go to the six subdirectories under CrNbTaW/ in this github repository. Obtain the mean and standard devitaion of each set of LSR.
 
+## LSR in MoNbTaV
+
+Repeat the steps above to get 20 {110} edge LSR, 20 {110} screw LSR, 20 {112} edge LSR, 20 {112} screw LSR, 20 {123} edge LSR, and 20 {123} screw LSR in MoNbTaV. Go to the six subdirectories under MoNbTaV/ in this github repository. Obtain the mean and standard devitaion of each set of LSR.
+
 ## LSR in MoNbTaW
 
 Repeat the steps above to get 20 {110} edge LSR, 20 {110} screw LSR, 20 {112} edge LSR, 20 {112} screw LSR, 20 {123} edge LSR, and 20 {123} screw LSR in MoNbTaW. Go to the six subdirectories under MoNbTaW/ in this github repository. Obtain the mean and standard devitaion of each set of LSR.
 
 ## Results
 
-Eventually, you will have 20 x 3 x 3 x 2 = 360 LSR values. You will also have 3 x 3 x 2 = 18 different mean and standard deviation of LSR.
+Eventually, you will have 20 x 3 x 4 x 2 = 480 LSR values. You will also have 3 x 4 x 2 = 24 different mean and standard deviation of LSR.
