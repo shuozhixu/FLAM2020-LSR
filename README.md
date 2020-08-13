@@ -61,6 +61,8 @@ Repeat the steps above to get 20 {110} edge LSR, 20 {110} screw LSR, 20 {112} ed
 
 Repeat the steps above to get 20 {110} edge LSR, 20 {110} screw LSR, 20 {112} edge LSR, 20 {112} screw LSR, 20 {123} edge LSR, and 20 {123} screw LSR in MoNbTaV. Go to the six subdirectories under MoNbTaV/ in this github repository. Obtain the mean and standard devitaion of each set of LSR.
 
+Note: the interatomic potential file for this HEA is different from that for the other three HEAs.
+
 ## LSR in MoNbTaW
 
 Repeat the steps above to get 20 {110} edge LSR, 20 {110} screw LSR, 20 {112} edge LSR, 20 {112} screw LSR, 20 {123} edge LSR, and 20 {123} screw LSR in MoNbTaW. Go to the six subdirectories under MoNbTaW/ in this github repository. Obtain the mean and standard devitaion of each set of LSR.
