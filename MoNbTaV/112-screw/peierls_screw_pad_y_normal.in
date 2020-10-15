@@ -25,7 +25,7 @@ change_box all triclinic
 # ------- EAM potentials      -------------------------------------------------
 
 pair_style      eam/alloy
-pair_coeff      * * TiZrNbVMoTaAl.eam.eam.alloy Mo Nb Ta V
+pair_coeff      * * TiZrNbVMoTaAl.eam.alloy Mo Nb Ta V
 
  
 # ------- timestep & log      -------------------------------------------------
