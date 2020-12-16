@@ -1,6 +1,6 @@
 # Local slip resistance
 
-Here, we calculate the local slip resistance (LSR) of edge and screw dislocations on {110}, {112}, and {123} planes in CrMoNbTa, CrNbTaW, MoNbTaV, and MoNbTaW. LSR is just a name for the Peierls stress in HEAs. Since there are two types of dislocations, three types of planes, and four HEAs, you need to prepare 24 directories on your local computer and on Pod, respectively.
+Here, we calculate the local slip resistance (LSR) of edge and screw dislocations on {110}, {112}, and {123} planes in CrMoNbTa, CrNbTaW, MoNbTaV, and MoNbTaW. LSR is just a name for the Peierls stress in HEAs. For more information on LSR and Peierls stress, read [this paper](http://dx.doi.org/10.1016/j.actamat.2020.10.042). Since there are two types of dislocations, three types of planes, and four HEAs, you need to prepare 24 directories on your local computer and on Pod, respectively.
 
 ## {110} LSR of the edge dislocation in CrMoNbTa
 
