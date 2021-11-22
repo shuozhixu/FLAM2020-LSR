@@ -9,7 +9,7 @@ Take the {110} LSR of the edge dislocation in CrMoNbTa as an example. First, on 
 - `lmp_edge.batch`, which is for job submission
 - `edge_CrMoNbTa_110_40nm_pad.lmp`, which is the LAMMPS data file
 - `peierls_edge_pad_y_normal.in`, which is the LAMMPS input file
-- `CrMoNbTaVW_Xu2022.eam.alloy`, which is an interatomic potential file developed by [Xu et al.](http://dx.doi.org/10.1016/j.commatsci.2021.110942)
+- `CrMoNbTaVW_Xu2022.eam.alloy`, which is an interatomic potential file made by [Xu et al.](http://dx.doi.org/10.1016/j.commatsci.2021.110942)
 
 Then on Pod, create a new directory in your `$HOME`. Say the directory is also `CrMoNbTa/110-edge`. The commands are
 
