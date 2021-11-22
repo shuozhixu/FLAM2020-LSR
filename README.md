@@ -9,7 +9,7 @@ Take the {110} LSR of the edge dislocation in CrMoNbTa as an example. First, on 
 - `lmp_edge.batch`, which is for job submission
 - `edge_CrMoNbTa_110_40nm_pad.lmp`, which is the LAMMPS data file
 - `peierls_edge_pad_y_normal.in`, which is the LAMMPS input file
-- `MoTaWNbCr_Zhou04.eam.alloy`, which is an interatomic potential file developed by Wu-Rong Jian
+- `CrMoNbTaVW_Xu2022.eam.alloy`, which is an interatomic potential file developed by Wu-Rong Jian
 
 Then on Pod, create a new directory in your `$HOME`. Say the directory is also `CrMoNbTa/110-edge`. The commands are
 
@@ -71,8 +71,13 @@ Repeat the steps above to get 20 {110} edge LSR, 20 {110} screw LSR, 20 {112} ed
 
 Eventually, you will have 20 x 3 x 4 x 2 = 480 LSR values. You will also have 3 x 4 x 2 = 24 different mean and standard deviation of LSR.
 
-## Reference
+## References
 
-If you use any file from this GitHub repository, please cite
+If you use the interatomic potential file from this GitHub repository, please cite
 
+- Shuozhi Xu, Saeed Zare Chavoshi, Yanqing Su, [On calculations of basic structural parameters in multi-principal element alloys using small atomistic models](http://dx.doi.org/10.1016/j.commatsci.2021.110942), Comput. Mater. Sci. 202 (2022) 110942
+
+If you use any other files from this GitHub repository, please also cite
+
+- Rebecca A. Romero, Shuozhi Xu, Wu-Rong Jian, Irene J. Beyerlein, C.V. Ramana, Atomistic calculations of the local slip resistances in four refractory multi-principal element alloys, Int. J. Plast. (in press)
 - Shuozhi Xu, Yanqing Su, Wu-Rong Jian, Irene J. Beyerlein, [Local slip resistances in equal-molar MoNbTi multi-principal element alloy](http://dx.doi.org/10.1016/j.actamat.2020.10.042), Acta Mater. 202 (2021) 68--79

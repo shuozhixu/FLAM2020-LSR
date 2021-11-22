@@ -1,0 +1,118 @@
+#shear loading for x[111], y[11-2] and z[-110]. Line direction along z axis, slip direction along x axis and normal direction of glide plane along y direction.
+
+
+# ------- initialization      -------------------------------------------------
+units metal
+dimension 3
+boundary p s p
+atom_style atomic
+neighbor 2 bin
+
+# ------- create basic geometry      ------------------------------------------------- 
+
+region mybox block 0 0.1 0 0.1 0 0.1
+create_box 4 mybox
+
+read_data screw_CrNbTaW_123_40nm_pad.lmp add merge
+
+set type 1 type/ratio 2 0.5 1239
+set type 1 type/ratio 3 0.5 3534
+set type 2 type/ratio 4 0.5 4678
+
+change_box all triclinic
+
+
+# ------- EAM potentials      -------------------------------------------------
+
+pair_style      eam/alloy
+pair_coeff      * * CrMoNbTaVW_Xu2022.eam.alloy Cr Nb Ta W
+
+ 
+# ------- timestep & log      -------------------------------------------------
+
+thermo_style custom step cpu temp pxx pyy pzz pxy pxz pyz xy xz yz pe
+thermo 100
+
+# ------- fixed region      -------------------------------------------------
+variable tmp0 equal "ylo+6"
+variable ylo0 equal ${tmp0}
+variable tmp1 equal "yhi-6"
+variable yhi0 equal ${tmp1}
+
+region upper block INF INF ${yhi0} INF INF INF units box
+region lower block INF INF INF ${ylo0} INF INF units box
+
+group  upper region upper
+group  lower region lower
+group  boundary union upper lower
+group  mobile subtract all boundary
+
+# ------- energy minimization -------------------------------------------------
+
+variable Etol equal 1.0e-12
+
+min_style cg
+fix 1 all box/relax x 0 z 0 nreset 1
+minimize  ${Etol} ${Etol} 100000 100000
+unfix 1
+
+min_style fire
+minimize  ${Etol} ${Etol} 100000 100000
+
+dump 1 all custom 1 dump.0.load id type x y z
+
+run 0
+undump 1
+
+# ------- MS Load ---------
+
+fix freeze boundary setforce NULL NULL 0.0
+
+variable LY equal ly
+
+variable Eel1   equal  0.00
+variable Eel2   equal  0.002
+
+variable theta equal 0.        # in units of radian
+
+variable Epzy   equal  yz/${LY}
+variable Epxy   equal  xy/${LY}
+
+variable  Lzy1  equal   (${Epzy}+${Eel1})*${LY}*cos(${theta})
+variable  Lzy2  equal   (${Epzy}+${Eel2})*${LY}*cos(${theta})
+
+variable  Lxy1  equal   (${Epxy}+${Eel1})*${LY}*sin(${theta})
+variable  Lxy2  equal   (${Epxy}+${Eel2})*${LY}*sin(${theta})
+
+variable N equal 2001
+
+label       loop
+variable    a loop ${N}
+
+variable zyTilt equal ${Lzy1}+(${a}-1)/(${N}-1)*(${Lzy2}-${Lzy1})
+
+variable xyTilt equal ${Lxy1}+(${a}-1)/(${N}-1)*(${Lxy2}-${Lxy1})
+
+change_box all yz final ${zyTilt} remap units box       
+
+change_box all xy final ${xyTilt} remap units box
+
+min_style cg
+minimize  ${Etol} ${Etol} 100000 100000
+
+min_style fire
+minimize  ${Etol} ${Etol} 100000 100000
+
+variable yTilt  equal ${zyTilt}*cos(${theta})+${xyTilt}*sin(${theta})
+variable strain equal ${yTilt}/${LY}
+variable PY equal (pyz*cos(${theta})+pxy*sin(${theta}))*0.1          #####MPa
+
+print "${strain} ${PY}" append strain-stress
+
+dump 1 all custom 1 dump.${a}.load id type x y z
+
+run 0
+undump 1
+
+next        a
+jump        peierls_screw_pad_y_normal.in loop
