@@ -79,5 +79,5 @@ If you use the interatomic potential file from this GitHub repository, please ci
 
 If you use any other files from this GitHub repository, please also cite
 
-- Rebecca A. Romero, Shuozhi Xu, Wu-Rong Jian, Irene J. Beyerlein, C.V. Ramana, Atomistic calculations of the local slip resistances in four refractory multi-principal element alloys, Int. J. Plast. (in press)
+- Rebecca A. Romero, Shuozhi Xu, Wu-Rong Jian, Irene J. Beyerlein, C.V. Ramana, [Atomistic calculations of the local slip resistances in four refractory multi-principal element alloys](http://dx.doi.org/10.1016/j.ijplas.2021.103157), Int. J. Plast. 149 (2022) 103157
 - Shuozhi Xu, Yanqing Su, Wu-Rong Jian, Irene J. Beyerlein, [Local slip resistances in equal-molar MoNbTi multi-principal element alloy](http://dx.doi.org/10.1016/j.actamat.2020.10.042), Acta Mater. 202 (2021) 68--79
